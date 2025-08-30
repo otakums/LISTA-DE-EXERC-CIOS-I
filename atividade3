@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+int main() {
+    int valor;
+    int n100, n50, n20, n10, n5, n2;
+
+    printf("Digite o valor a ser sacado: ");
+    scanf("%d", &valor);
+
+    // Verifica se é possível sacar (não pode ser 1 ou valores ímpares que deixem resto 1)
+    if (valor < 2) {
+        printf("Nao e possivel sacar esse valor.\n");
+        return 0;
+    }
+
+    // Cálculo das cédulas
+    n100 = valor / 100;
+    valor = valor % 100;
+
+    n50 = valor / 50;
+    valor = valor % 50;
+
+    n20 = valor / 20;
+    valor = valor % 20;
+
+    n10 = valor / 10;
+    valor = valor % 10;
+
+    n5 = valor / 5;
+    valor = valor % 5;
+
+    n2 = valor / 2;
+    valor = valor % 2;
+
+    // Se sobrou algum valor que não pode ser pago
+    if (valor != 0) {
+        printf("Nao e possivel sacar esse valor exatamente.\n");
+        return 0;
+    }
+
+    // Exibe resultado
+    if (n100 > 0) printf("%d cedula(s) de 100\n", n100);
+    if (n50 > 0)  printf("%d cedula(s) de 50\n", n50);
+    if (n20 > 0)  printf("%d cedula(s) de 20\n", n20);
+    if (n10 > 0)  printf("%d cedula(s) de 10\n", n10);
+    if (n5 > 0)   printf("%d cedula(s) de 5\n", n5);
+    if (n2 > 0)   printf("%d cedula(s) de 2\n", n2);
+
+    return 0;
+}
