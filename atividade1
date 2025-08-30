@@ -22,5 +22,8 @@ int main() {
         printf("Nao e um triangulo valido.\n");
     }
 
+// 1,1,1 equilatero, 1,2,2 isoceles, 3,4,5 escaleno e 1,2,3 nao e um triangulo
+
     return 0;
+
 }
